@@ -1,22 +1,21 @@
-PostGIS workshop
+PostGIS ワークショップ
 ================
 
-This is a simple workshop to dive into PostGIS and discover some of its features.
-
-It uses :
+これはシンプルなPostGISのワークショップです。いくつかの機能について使ってみます。
+以下のものを使います :
 
 * PostGIS 2.x
 * QGIS and its DBManager
 * PgAdmin3
 
-Follow the steps provided in the _doc_ directory.
+以下のステップが _doc_ ディレクトリで解説されています.
 
 About
 =====
 
-This workshop is hosted on GitHub : https://github.com/Oslandia/postgis-workshop
+このワークショップは GitHubでホストされています : https://github.com/Oslandia/postgis-workshop
 
-Credits go to Oslandia : http://www.oslandia.com
-Please report any bugs, or help improve the workshop. 
+Oslandia のクレジットは次の場所です: http://www.oslandia.com
+バグをみつけた場合はレポートしてください, またワークショップの改善を手伝ってください. 
 
-The whole workshop is licenced under CC-By-SA.
+このワークショップはすべて CC-By-SA でライセンスされています.
