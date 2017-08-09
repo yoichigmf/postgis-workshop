@@ -1,7 +1,7 @@
-2 - Basic Analysis
+2 - 基本的な解析
 ==================
 
-Find populated cities
+人口密度が高い都市を探します
 ---------------------
 
 ```SQL
@@ -15,10 +15,10 @@ LIMIT 100;
 ```
 
 
-Practice : 
-- View the result in QGIS with DbManager plugin
+演習 : 
+- QGIS の DbManager プラグインでこの結果を見てみましょう
 
-Toulouse neighbors
+Toulouse の近所
 -------------------
 
 Retrieve all city located around a single one named Toulouse.
