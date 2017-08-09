@@ -50,16 +50,16 @@ ORDER BY SUM(ST_Length(geom)) DESC
 LIMIT 10;
 ```
 
-NOTE: 
-- first result is related to data uncompletness
+注: 
+- 最初の結果はデータが不完全なことに関係しています
 
-About the query :
+queryの注意点 :
 - NULL / NOT NULL
 - GROUP BY and aggregate function as SUM
 - ORDER BY ASC / DESC
 - LIMIT
 
-Buffers
+バッファ
 -------
 
 ```SQL
