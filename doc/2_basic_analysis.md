@@ -21,7 +21,7 @@ LIMIT 100;
 Toulouse の近所
 -------------------
 
-Retrieve all city located around a single one named Toulouse.
+Toulouseという名前の都市の周りの都市の一覧を取得しましょう.
 
 ```SQL
 
@@ -32,13 +32,13 @@ WHERE ST_Touches( c.geom,
                 )
 ;
 ```
-Practice : 
-- View the result in QGIS with DbManager plugin
+演習 : 
+- QGIS の DbManager プラグインでこの結果を見てみましょう
 
-Longest rivers
+最も長い河川
 --------------
 
-Which rivers are the longest ?
+どの河川が最も長いでしょうか ?
  
 ```SQL
 
