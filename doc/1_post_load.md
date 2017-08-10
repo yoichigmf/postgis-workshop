@@ -1,28 +1,28 @@
 1 - Post-loading
 ================
 
-Check PostGIS
+PostGISのチェック
 -------------
 
 ```SQL
 
--- Check that postgis extension is correctly loaded
--- for the current database
+-- カレントデータベースに 
+-- エクステンションが正しくロードされているかどうかチェックします
 
 SELECT postgis_full_version();
 ```
 
-Check metadata
+メタデータのチェック
 --------------
 
 ```SQL
--- Check that metadata informations are correctly set
+-- メタデータ情報が正しく設定されているかどうかチェックします
 
 SELECT * FROM geometry_columns;
 ```
 
 
-About the query :
+queryについて :
 - With PostGIS 2.0 geometry_columns is now a view so no risk to decorrelate geometry data stored and metadata (from geometry_columns).
 
 
