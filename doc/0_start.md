@@ -1,25 +1,25 @@
-PostGIS workshop
+PostGIS ワークショップ
 ================
 
-Resources
+リソース
 ---------
 
-Some useful links :
+便利なリンク集 :
 * PostGIS Home : http://www.postgis.net
 * PostGIS Documentation : http://www.postgis.net/docs/manual-2.0/
 * PostgreSQL Documention : http://www.postgresql.org/docs/9.2/interactive/index.html
-* This workshop on GitHub : https://github.com/vpicavet/postgis-workshop
-* GeoJSON validation : http://geojsonlint.com/
+* GitHubにあるこのワークショップ : https://github.com/vpicavet/postgis-workshop
+* GeoJSON の検証 : http://geojsonlint.com/
 * GeoJSON on GitHub : https://help.github.com/articles/mapping-geojson-files-on-github
 
-Get started
+始めましょう
 -----------
 
-First download the latest version of this workshop :
+最初にこのワークショップの最新版をダウンロードして下さい :
 
 https://codeload.github.com/vpicavet/postgis-workshop/zip/master
 
-Save to the home directory and unzip it to the _workshop_ directory.
+ホームディレクトリに保存して _workshop_ ディレクトリに解凍して下さい.
 
 ```bash
 $ cd ~
@@ -29,14 +29,13 @@ $ unzip -o postgis-workshop-master.zip -d workshop
 $ cd workshop/postgis-workshop-master
 ```
 
-The first step is to initialize the database and load the data.
+最初のステップはデータベースの初期化とデータのロードです.
 
-Launch the three scripts in the _scripts_ directory to create the database, download data sets,  and load the data into the database.
+_scripts_ ディレクトリにある3個のスクリプトを動かしてデータベースの作成,データのダウンロード,データのデータベースへのロードを行ってください.
 
-To load the shapefiles, you can also use the _shp2pgsql-gui_ GUI tool.
+shapefilesをロードする場合 _shp2pgsql-gui_ GUI ツールを使うこともできます.
 
-You can re-run those scripts in case of any problem.
-
+何か問題があった場合これらのスクリプトを再度実行することができます.
 ```bash
 $ cd scripts
 $ sudo -u postgres bash STEP_1-CREATE.sh
@@ -44,6 +43,6 @@ $ bash STEP_2-DOWNLOAD-DATA.sh
 $ sudo -u postgres bash STEP_3-LOAD.sh
 ```
 
-Now you can use pgAdmin3 to look at your data, and load it with QGIS.
+この時点で pgAdmin3 を使ってデータを見ることができます, またデータを QGISにロードすることができます.
 
-Try to do some nice symbology for the data in QGIS and proceed to next step.
+ QGISをつかってデータに対する素敵な描画設定を試して下さい and proceed to next step.

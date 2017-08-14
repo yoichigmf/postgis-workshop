@@ -26,7 +26,7 @@ queryについて :
 - With PostGIS 2.0 geometry_columns is now a view so no risk to decorrelate geometry data stored and metadata (from geometry_columns).
 
 
-Check data
+データチェック
 ----------
 
 Check if any invalid geometry in a dataset
