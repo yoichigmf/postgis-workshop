@@ -1,10 +1,10 @@
-7 - Analysis
+7 - 解析
 ============
 
 Intersection
 ------------
 
-Retrieving all the administrative areas crossed by a single river, ordered from first to last
+1本の川と交差する行政界ポリゴンを最初から最後までの順番で取得します
 
 ```SQL
 WITH river AS
@@ -23,7 +23,7 @@ ORDER BY ST_LineLocatePoint(
 ;
 ```
 
-Use on the fly reprojection and view it with QGIS DB Manager
+オンザフライ再投影をしてQGIS DB Managerで表示します
 
 ```SQL
 SELECT  (row_number() OVER ())::integer AS gid,
@@ -34,14 +34,14 @@ FROM rff.station;
 ```
 
 
-About the query :
-- spatial references
+このqueryについて :
+- 空間参照
 - http://www.postgis.net/docs/manual-2.0/ST_Transform.html
 
-Generalization
+総描
 --------------
 
-Generalize data : simplification of geometries.
+Generalize data : ジオメトリの簡略化.
 
 ```SQL
 WITH river AS
@@ -55,19 +55,19 @@ SELECT 1::integer AS gid, ST_Simplify(geom, 250) AS geom
 FROM river;
 ```
 
-Practice :
-- View it with QGIS DB Manager
-- Then slightly change the simplify parameter
+演習 :
+- QGIS DB Managerで見てみましょう
+- それから単純化パラメータを少し変えてみましょう
 
-About the query :
-- Generalization
-- Topology issue
+この query について:
+- 総描
+- トポロジの問題
 - http://www.postgis.net/docs/manual-2.0/ST_Simplify.html
 
-Buffer search
+バッファの検索
 -------------
 
-Retrieve administrative areas located at 50 Km from Toulouse city center
+Toulouse 市の中心から 50km 以内にある行政ポリゴンを取得してみる
 
 ```SQL
 WITH toulouse_50km AS
@@ -83,7 +83,7 @@ WHERE ST_Intersects(c.geom, t.geom);
 ```
 
 
-Same result without a CTE, with also good performances:
+同じ結果で CTEを使わない場合, またパフォーマンスもいいです:
 
 ```SQL
 SELECT gid, nom_com, geom
@@ -95,7 +95,7 @@ WHERE ST_Intersects(geom,
  ));
 ```
 
-Same result but with poor performance because ST_Intersects call a nested function
+同じ結果でパフォーマンスがよくない例,何故なら ST_Intersects が多重に呼ばれているからです
 
 ```SQL
 WITH toulouse AS
@@ -110,7 +110,7 @@ FROM admin.commune AS c, toulouse AS t
 WHERE ST_Intersects(c.geom, ST_Buffer(t.geom, 50000));
 ```
 
-Last but not least, use _ST_Dwithin_ function :
+最後ですがちょっとした, _ST_Dwithin_ 機能の利用 :
 ```SQL
 select
     t1.*
@@ -125,13 +125,13 @@ where
 ```
 
 
-About the query :
-- Consideration on performances based on spatial index and spatial operator
+この query について:
+- 空間インデックスと空間演算のパフォーマンスについての考察
 
-Nearest neighbors
+最近傍探索
 -----------------
 
-Big cities are generally located on big rivers. Find for each big city big the closest rivers
+大きな都市は通常大きな川の近くにあります. それぞれの大都市に最も近い川を検索しましょう
 
 ```SQL
 SELECT c.nom_com,
@@ -149,7 +149,7 @@ AND   r.geom && ST_Expand(c.geom, 10000)
 ORDER BY r.geom <-> c.geom;
 ```
 
-About the query :
-- Bbox and geometry
-- Intesection operator &&
-- KNN operators <#> and <->
+このqueryについて :
+- Bbox と geometry
+- 交差演算子 &&
+- KNN (k-Nearest Neighbor)演算子 <#> and <->
