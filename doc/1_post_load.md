@@ -23,13 +23,13 @@ SELECT * FROM geometry_columns;
 
 
 queryについて :
-- With PostGIS 2.0 geometry_columns is now a view so no risk to decorrelate geometry data stored and metadata (from geometry_columns).
+- PostGIS 2.0では geometry_columns がビューになりました.これによって格納されたジオメトリデータとメタデータの( geometry_columnsからの)リレーションが切れるリスクが無くなりました .
 
 
 データチェック
 ----------
 
-Check if any invalid geometry in a dataset
+不正なジオメトリがデータセットにないかチェックします
 
 ```SQL
 
@@ -43,20 +43,20 @@ WHERE NOT ST_IsValid(geom);
 ```
 
 
-NOTE : POINT data are always valid, we focus here on surfacic data  (far most invalid cases)
+注 : POINT データは常に正しい形式です, ここでは面データを対象にします (大部分のデータ不正は面データでおこります)
 
 
-About the query : 
-- What is invalid data ?
-- OGC SFS specifications
+queryについて : 
+- 不正なデータとはどういうものですか ?
+- OGC SFS 仕様
 
-Check indexes
+インデックスのチェック
 -------------
 
-Check if Spatial Indexes were correctly created
+空間インデックスが正しく作られているかどうかチェックして下さい
 
-With PgAdmin or with psql and \di command
+PgAdmin または psql を立ち上げて \di を打ち込んで下さい
 
-About indexes : 
-- What is spatial index?
-- What does it stand for?
+インデックスについて : 
+- 空間インデックスとは何でしょうか?
+- それは何の役にたつのでしょうか?

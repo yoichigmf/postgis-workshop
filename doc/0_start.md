@@ -45,4 +45,4 @@ $ sudo -u postgres bash STEP_3-LOAD.sh
 
 この時点で pgAdmin3 を使ってデータを見ることができます, またデータを QGISにロードすることができます.
 
- QGISをつかってデータに対する素敵な描画設定を試して下さい and proceed to next step.
+ QGISをつかってデータに対する素敵な描画設定を試して下さい そして次のステップを実行して下さい.
