@@ -1,10 +1,10 @@
-4 - ƒWƒIƒƒgƒŠƒAƒNƒZƒbƒT
+4 - ã‚¸ã‚ªãƒ¡ãƒˆãƒªã‚¢ã‚¯ã‚»ãƒƒã‚µ
 ======================
 
-ƒoƒCƒiƒŠŒ`®
+ãƒã‚¤ãƒŠãƒªå½¢å¼
 -------------
 
-PostGIS‚ÉŠi”[‚³‚ê‚Ä‚¢‚éŒ`®‚ÅƒWƒIƒƒgƒŠ‚ğ“Ç‚İo‚µ‚Ü‚·
+PostGISã«æ ¼ç´ã•ã‚Œã¦ã„ã‚‹å½¢å¼ã§ã‚¸ã‚ªãƒ¡ãƒˆãƒªã‚’èª­ã¿å‡ºã—ã¾ã™
 
 ```SQL
 SELECT geom 
@@ -13,13 +13,13 @@ LIMIT 10;
 ```
 
 
-query‚É‚Â‚¢‚Ä :
-- 16i”‚Å•\‚³‚ê‚½ƒoƒCƒiƒŠƒXƒgƒŒ[ƒW
+queryã«ã¤ã„ã¦ :
+- 16é€²æ•°ã§è¡¨ã•ã‚ŒãŸãƒã‚¤ãƒŠãƒªã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸
 
-“Ç‚ß‚éî•ñ
+èª­ã‚ã‚‹æƒ…å ±
 --------------
 
-ƒWƒIƒƒgƒŠ‚Ì\‘¢‚ğ“Ç‚İo‚µ‚Ü‚·
+ã‚¸ã‚ªãƒ¡ãƒˆãƒªã®æ§‹é€ ã‚’èª­ã¿å‡ºã—ã¾ã™
 
 ```SQL
 
@@ -29,12 +29,12 @@ LIMIT 10;
 ```
 
 TIP: 
-- PGAdmin ‚Å‚Íƒ}ƒ‹ƒ`ƒ‰ƒCƒ“‚ğ•\¦‚Å‚«‚Ü‚¹‚ñ, psql‚ğ—˜—p, copy-paste, ‚Ü‚½‚Í strings ŠÖ”‚ğg‚Á‚Ä‰º‚³‚¢
+- PGAdmin ã§ã¯ãƒãƒ«ãƒãƒ©ã‚¤ãƒ³ã‚’è¡¨ç¤ºã§ãã¾ã›ã‚“, psqlã‚’åˆ©ç”¨, copy-paste, ã¾ãŸã¯ strings é–¢æ•°ã‚’ä½¿ã£ã¦ä¸‹ã•ã„
 
-ƒf[ƒ^‚Ì•\¦
+ãƒ‡ãƒ¼ã‚¿ã®è¡¨ç¤º
 ------------
 
-‚»‚ë‚»‚ëlŠÔ‚ª“Ç‚ß‚éŒ`®‚Åƒf[ƒ^‚ğ•\¦‚µ‚½‚¢‚Å‚· 
+ãã‚ãã‚äººé–“ãŒèª­ã‚ã‚‹å½¢å¼ã§ãƒ‡ãƒ¼ã‚¿ã‚’è¡¨ç¤ºã—ãŸã„ã§ã™ 
 
 ```SQL
 SELECT ST_AsText(geom) 
@@ -43,15 +43,15 @@ LIMIT 10;
 ```
 
 TIP : 
-- ƒf[ƒ^‚ª‚Æ‚Ä‚à‘å‚«‚¢ê‡PGAdmin‚Å‚Í‰½‚à•\¦‚Å‚«‚Ü‚¹‚ñ (psql ‚ğ‘ã‚í‚è‚Ég‚Á‚Ä‰º‚³‚¢)
+- ãƒ‡ãƒ¼ã‚¿ãŒã¨ã¦ã‚‚å¤§ãã„å ´åˆPGAdminã§ã¯ä½•ã‚‚è¡¨ç¤ºã§ãã¾ã›ã‚“ (psql ã‚’ä»£ã‚ã‚Šã«ä½¿ã£ã¦ä¸‹ã•ã„)
 
-ƒf[ƒ^ƒAƒNƒZƒX
+ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹
 -----------
 
 ```SQL
--- ì‚ğW–ñ‚µ‚Ü‚· 
--- ƒWƒIƒƒgƒŠ‚Ìƒ|ƒCƒ“ƒg”‚ğ“Ç‚İo‚µ‚Ü‚·
--- “Á’è‚Ìƒ‰ƒCƒ“ƒXƒgƒŠƒ“ƒO‚Ì’†‚Ì“_‚ğ“Ç‚İo‚µ‚Ü‚·
+-- å·ã‚’é›†ç´„ã—ã¾ã™ 
+-- ã‚¸ã‚ªãƒ¡ãƒˆãƒªã®ãƒã‚¤ãƒ³ãƒˆæ•°ã‚’èª­ã¿å‡ºã—ã¾ã™
+-- ç‰¹å®šã®ãƒ©ã‚¤ãƒ³ã‚¹ãƒˆãƒªãƒ³ã‚°ã®ä¸­ã®ç‚¹ã‚’èª­ã¿å‡ºã—ã¾ã™
 
 
 WITH rhone AS 
@@ -69,18 +69,18 @@ SELECT ST_Summary(geom),
 FROM rhone;
 ```
 
-query‚É‚Â‚¢‚Ä :
-- SQL CTE‚Æ‚Í‰½‚Å‚µ‚å‚¤H
+queryã«ã¤ã„ã¦ :
+- SQL CTEã¨ã¯ä½•ã§ã—ã‚‡ã†ï¼Ÿ
 - http://www.postgis.net/docs/manual-2.0/ST_Summary.html
 - http://www.postgis.net/docs/manual-2.0/ST_NumPoints.html
 - http://www.postgis.net/docs/manual-2.0/ST_PointN.html
 
-‘Sƒ|ƒCƒ“ƒg‚Ìæ“¾
+å…¨ãƒã‚¤ãƒ³ãƒˆã®å–å¾—
 --------------
 
-If we want to retrieve every single point for the river linestring, we need to perform a loop
+å·ã®ãƒ©ã‚¤ãƒ³ã‚¹ãƒˆãƒªãƒ³ã‚°ã‹ã‚‰1å€‹ã¥ã¤ã®ç‚¹ã®æƒ…å ±ã‚’å–å¾—ã—ãŸã„å ´åˆã¯ãƒ«ãƒ¼ãƒ—ã‚’ä½¿ã†å¿…è¦ãŒã‚ã‚Šã¾ã™
 
-We will use _generate_series(i, j)_ :
+_generate_series(i, j)_ ã‚’ä½¿ã„ã¾ã™:
 ```SQL
 select generate_series(1, 55);
 
@@ -99,11 +99,11 @@ SELECT generate_series(1, ST_NumPoints(geom)) as n
 FROM rhone;
 ```
 
-About the query :
-- generate_series loop
-- Same as previously but with the loop on each point
+query ã«ã¤ã„ã¦:
+- generate_series ãƒ«ãƒ¼ãƒ—
+- å‰ã®ã‚‚ã®ã¨åŒã˜ã§ã™ãŒå„ç‚¹ã«å¯¾ã—ã¦ãƒ«ãƒ¼ãƒ—ã—ã¦ã„ã¾ã™
 
-Now get the points :
+ã“ã‚Œã§ç‚¹ã‚’å–å¾—ã§ãã¾ã™ :
 
 ```SQL
 WITH rhone AS 
@@ -121,7 +121,7 @@ FROM rhone, loop;
 
 ```
 
-And finally the query displayable with QGIS and DBManager:
+æœ€å¾Œã«ã‚¯ã‚¨ãƒªã‚’QGIS ã¨ DBManagerã§è¡¨ç¤ºã§ãã‚‹ã‚ˆã†ã«ã—ã¾ã™:
 
 ```SQL
 WITH rhone AS 
@@ -139,10 +139,10 @@ SELECT n::integer AS gid, ST_PointN(geom, n) AS geom
 FROM rhone, loop;
 ```
 
-The little format that could : GeoJSON
+ç°¡å˜ã«å¤‰æ›ã§ãã‚‹å½¢å¼ : GeoJSON
 ---------------------------------------
 
-Output a geometry to GeoJSON output format 
+ã‚¸ã‚ªãƒ¡ãƒˆãƒªã‚’GeoJSONå½¢å¼ã«ã—ã¦å‡ºåŠ›ã—ã¦ã¿ã¾ã™ 
 
 ```SQL
 WITH rhone AS 
@@ -157,7 +157,7 @@ SELECT ST_AsGeoJSON(ST_Transform(geom, 4326), 5)
 FROM rhone;
 ```
 
-Some more GeoJSON output :
+ã“ã†ã„ã† GeoJSON ã§ã®å‡ºåŠ›ã‚‚ã§ãã¾ã™ :
 
 ```SQL
 select 
@@ -172,12 +172,12 @@ from (
 ) as coms;
 ```
 
-About the query :
+ã“ã®queryã«ã¤ã„ã¦ :
 - http://www.postgis.net/docs/manual-2.0/ST_AsGeoJSON.html
-- number of decimal digit to use
+- ä½¿ç”¨ã™ã‚‹10é€²æ•°ã®æ¡æ•°
 
-Practice :
-- Test the result : http://geojsonlint.com/
-- Display it in OpenLayers demonstration GeoJSON input (link in ST_AsGeoJSON documentation page)
-- Display it on GitHub : https://github.com/vpicavet/geojson-samples/blob/master/rhone.geojson
+ç·´ç¿’å•é¡Œ :
+- çµæœã‚’ã“ã“ã§ãƒ†ã‚¹ãƒˆã—ã¦ã¿ã¾ã—ã‚‡ã† : http://geojsonlint.com/
+- OpenLayers demonstration GeoJSON ã®å…¥åŠ›ã«ã—ã¦è¡¨ç¤ºã—ã¦ã¿ã¾ã—ã‚‡ã† (ST_AsGeoJSON documentation pageã«ãƒªãƒ³ã‚¯ãŒã‚ã‚Šã¾ã™)
+- GitHubã§è¡¨ç¤ºã—ã¦ã¿ã¾ã—ã‚‡ã† : https://github.com/vpicavet/geojson-samples/blob/master/rhone.geojson
 
