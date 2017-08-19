@@ -60,12 +60,12 @@ GROUP BY code_reg;
 クエリについての解説 : 
 - http://www.postgis.net/docs/manual-2.0/ST_CollectionHomogenize.html
 
-Merge lines
+線の結合
 -----------
 
-Retrieve a single river (Rhone) and aggregate all LINESTRING subparts in a single geometry
+1つの川のデータ(Rhone)を読み出して すべての LINESTRING を単一のジオメトリのサブパートとして集約します
 
-_ST_LineMerge_ interest :
+_ST_LineMerge_ に注目して下さい :
 
 ```SQL
 SELECT
@@ -73,17 +73,17 @@ SELECT
    ST_Summary(ST_CollectionExtract(ST_Collect(geom), 2)) AS geom 
 FROM hydro.cours_eau 
 WHERE code_hydro = 'V---0000';
--- Hydrological code from Rhone river
+-- Rhone川の水文コード
 ;
 ```
 
-Using _ST_LineMerge_ and view it through QGIS DBManager:
+_ST_LineMerge_ を利用してQGIS DBManagerで結果を見てみましょう:
 
 ```SQL
 SELECT 1::integer AS gid,
       ST_LineMerge(ST_CollectionExtract(ST_Collect(geom), 2)) AS geom
 FROM hydro.cours_eau 
--- Hydrological code from Rhone river
+-- Rhone川の水文コード
 WHERE code_hydro = 'V---0000';
 ;
 ```
