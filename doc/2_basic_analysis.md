@@ -55,7 +55,7 @@ LIMIT 10;
 
 queryの注意点 :
 - NULL / NOT NULL
-- GROUP BY and aggregate function as SUM
+- GROUP BY と集約関数としての SUM
 - ORDER BY ASC / DESC
 - LIMIT
 
@@ -67,12 +67,12 @@ queryの注意点 :
 SELECT ST_Buffer(geom, 10000) AS geom, gid from admin.commune where nom_com = 'TOULOUSE';
 
 ```
-Make some more buffers around some cities. Then around the cities touching Toulouse.
+都市の周りにバッファをつくります. それから Toulouse に接する都市を検索します.
 
-Distances
+距離
 ---------
 
--- How far are big cities from Toulouse ?
+-- 大きな都市が Toulouse からどのくらい遠くにあるか検索します?
 
 ```SQL
 
@@ -84,6 +84,6 @@ WHERE population > 150000
 AND NOT nom_com = 'TOULOUSE';
 ```
 
-About the query :
-- SQL Sub Query
+queryについて :
+- SQL サブクエリ
 - ST_Distance
