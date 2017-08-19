@@ -1,10 +1,10 @@
 3 - 集約
 ==============
 
-ユニオン
+union
 -----
 
-Aggregate all city administrative area in region administrative area
+地域内の区域を都市別に集約します
 
 ```SQL
 SELECT code_reg,
@@ -13,7 +13,7 @@ FROM admin.commune
 GROUP BY code_reg;
 ```
 
-We now add a generated unique integer to allow QGIS DBManager to load the data :
+QGIS DBManagerでデータをロードするためにユニークな整数のIDを追加します :
 
 ```SQL
 SELECT (row_number() OVER ())::integer AS gid, 
@@ -24,14 +24,14 @@ GROUP BY code_reg;
 ```
 
 
-About the query : 
+クエリについての解説 : 
 - http://www.postgis.net/docs/manual-2.0/ST_Union.html
-- row_number() and SQL WINDOWING
+- row_number() と SQL WINDOWING
 
 Collect
 -------
 
-Same than previously, but now we use _ST_Collect_ instead of _ST_Union_
+前記のものと同じ,しかしここでは _ST_Union_ の代わりに _ST_Collect_ を使っています
 
 ```SQL
 SELECT (row_number() OVER ())::integer AS gid, 
@@ -40,15 +40,15 @@ FROM admin.commune
 GROUP BY code_reg;
 ```
 
-About the query : 
-- What is an MULTI*, what is a COLLECTION
-- Why ST_Collect is faster than ST_Union
+クエリについての解説 : 
+- MULTI* とは何でしょう？, COLLECTION とは何でしょう？
+- 何故 ST_Collect は ST_Union より高速なのか
 - http://www.postgis.net/docs/manual-2.0/ST_CollectionExtract.html
 
-More collections
+さらに collections について
 ----------------
 
-Like previously, but now we use _ST_CollectionHomogenize_ instead of _ST_CollectionExtract_
+前と似ていますがここでは _ST_CollectionExtract_ の代わりに  _ST_CollectionHomogenize_ を使っています
 
 ```SQL
 SELECT (row_number() OVER ())::integer AS gid, 
@@ -57,7 +57,7 @@ FROM admin.commune
 GROUP BY code_reg;
 ```
 
-About the query : 
+クエリについての解説 : 
 - http://www.postgis.net/docs/manual-2.0/ST_CollectionHomogenize.html
 
 Merge lines
