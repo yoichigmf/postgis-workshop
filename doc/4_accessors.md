@@ -1,10 +1,10 @@
-4 - Geometry accessors
+4 - ジオメトリアクセッサ
 ======================
 
-Binary format
+バイナリ形式
 -------------
 
-Retrieve geometry as stored in PostGIS
+PostGISに格納されている形式でジオメトリを読み出します
 
 ```SQL
 SELECT geom 
@@ -13,13 +13,13 @@ LIMIT 10;
 ```
 
 
-About the query :
-- binary storage in hexadecimal format
+queryについて :
+- 16進数で表されたバイナリストレージ
 
-Readable infos
+読める情報
 --------------
 
-Retrieve structure from some geometries
+ジオメトリの構造を読み出します
 
 ```SQL
 
@@ -29,12 +29,12 @@ LIMIT 10;
 ```
 
 TIP: 
-- PGAdmin does not display multilines, use psql, copy-paste, or use strings functions
+- PGAdmin ではマルチラインを表示できません, psqlを利用, copy-paste, または strings 関数を使って下さい
 
-Display data
+データの表示
 ------------
 
-Now we want to display the data itself in a human readable format 
+そろそろ人間が読める形式でデータを表示したいです 
 
 ```SQL
 SELECT ST_AsText(geom) 
@@ -43,15 +43,15 @@ LIMIT 10;
 ```
 
 TIP : 
-- PGAdmin display does not display anything if the data is too big (use psql instead)
+- データがとても大きい場合PGAdminでは何も表示できません (psql を代わりに使って下さい)
 
-Access data
+データアクセス
 -----------
 
 ```SQL
--- Aggregate a river 
--- retrieve the number of points in the geometry
--- retrieve a specific point among the linestring
+-- 川を集約します 
+-- ジオメトリのポイント数を読み出します
+-- 特定のラインストリングの中の点を読み出します
 
 
 WITH rhone AS 
@@ -69,13 +69,13 @@ SELECT ST_Summary(geom),
 FROM rhone;
 ```
 
-About the query :
-- What is SQL CTE
+queryについて :
+- SQL CTEとは何でしょう？
 - http://www.postgis.net/docs/manual-2.0/ST_Summary.html
 - http://www.postgis.net/docs/manual-2.0/ST_NumPoints.html
 - http://www.postgis.net/docs/manual-2.0/ST_PointN.html
 
-Get all points
+全ポイントの取得
 --------------
 
 If we want to retrieve every single point for the river linestring, we need to perform a loop
